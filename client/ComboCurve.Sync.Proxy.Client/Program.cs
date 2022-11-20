@@ -1,15 +1,10 @@
 ﻿using ComboCurve.Sync.Proxy.Client.Clients;
+using ComboCurve.Sync.Proxy.Client.Utilities;
 
-Console.Write("Server URL: ");
+var configuration = ConfigurationUtility.GetConfiguration();
+var url = new Uri(configuration["serverUrl"]!);
 
-var rawUrl = Console.ReadLine();
-
-rawUrl = "https://localhost:7116"; // TODO remove hardcoded
-
-var url = new Uri(rawUrl);
-
-await ApiClient.CallApi(url);
-
-await HubClient.CallNotificationHubMethods(url);
+await ApiClient.CallApi(url, configuration);
+await HubClient.CallNotificationHubMethods(url, configuration);
 
 Console.ReadKey();

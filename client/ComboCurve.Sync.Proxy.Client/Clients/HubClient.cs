@@ -1,38 +1,29 @@
-﻿using ComboCurve.Sync.Proxy.Core.Models.Hubs;
+﻿using ComboCurve.Sync.Proxy.Client.Utilities;
+using ComboCurve.Sync.Proxy.Core.Models.Hubs;
 using Microsoft.AspNetCore.SignalR.Client;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 
 namespace ComboCurve.Sync.Proxy.Client.Clients
 {
     internal class HubClient
     {
-        public static async Task CallNotificationHubMethods(Uri baseUrl)
+        public static async Task CallNotificationHubMethods(Uri url, IConfiguration configuration)
         {
-            var signalRHubUrl = $"{baseUrl.AbsoluteUri}signalr";
+            Console.WriteLine($"\n--- 2/3 ---\nConfiguring SignalR connection {url}...\n");
 
-            Console.WriteLine($"\n---\nConfiguring SignalR connection {signalRHubUrl}...\n");
-
-            var connection = new HubConnectionBuilder()
-                .WithUrl(signalRHubUrl)
-                .Build();
-
+            var connection = ProxyUtility.PrepareProxySignalRClient(url, configuration);
             await connection.StartAsync();
 
             connection.On("ReceiveMessageFromServer", () =>
             {
-                Console.WriteLine("\n---\nReceived additional message from the server.");
+                Console.WriteLine("\n--- 3/3 ---\nReceived additional message from the server.");
+                Console.WriteLine("\nEverything is OK.");
             });
 
             var response = await connection.InvokeAsync<SendMessageResponse>("SendMessage");
 
-            Console.WriteLine($"Message Received at {response.ReceivedAtUtc}");
+            Console.WriteLine($"Response from server received at {response.ReceivedAtUtc}");
             Console.WriteLine($"\"{response.ResponseMessage}\"");
-
-            //Console.WriteLine(responseContent);
         }
     }
 }

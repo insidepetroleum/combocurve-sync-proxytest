@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ComboCurve.Sync.Proxy.Client.Utilities;
+using Microsoft.Extensions.Configuration;
 
 namespace ComboCurve.Sync.Proxy.Client.Clients
 {
     internal class ApiClient
     {
-        public static async Task CallApi(Uri url)
+        public static async Task CallApi(Uri url, IConfiguration configuration)
         {
-            Console.WriteLine($"\n---\nCalling API {url}...\n");
+            Console.WriteLine($"\n--- 1/3 ---\nCalling conventional API {url}...\n");
 
-            using var client = new HttpClient
-            {
-                BaseAddress = url
-            };
+            using var client = ProxyUtility.PrepareProxyHttpClient(url, configuration);
 
             var response = await client.GetAsync("/api/value");
 
