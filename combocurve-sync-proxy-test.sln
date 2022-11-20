@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{0AD111E1-1204-4D02-8599-2E18A2F79854}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "client", "client", "{240DBF35-177F-46BD-9F1B-606CA755DEC6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComboCurve.Sync.Proxy.Client", "client\ComboCurve.Sync.Proxy.Client\ComboCurve.Sync.Proxy.Client.csproj", "{ECFF72FA-58FC-4CCE-89BC-3B632B67D601}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComboCurve.Sync.Proxy.Backend", "backend\ComboCurve.Sync.Proxy.Backend\ComboCurve.Sync.Proxy.Backend.csproj", "{9F272FDE-169A-4E17-9853-0431D3DF7767}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib-core", "lib-core", "{50134AAC-6AC5-42D0-A53A-D043C51CA430}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComboCurve.Sync.Proxy.Core", "lib-core\ComboCurve.Sync.Proxy.Core\ComboCurve.Sync.Proxy.Core.csproj", "{F6DA2872-F225-4935-BB9D-F66923F3B726}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECFF72FA-58FC-4CCE-89BC-3B632B67D601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECFF72FA-58FC-4CCE-89BC-3B632B67D601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECFF72FA-58FC-4CCE-89BC-3B632B67D601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECFF72FA-58FC-4CCE-89BC-3B632B67D601}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F272FDE-169A-4E17-9853-0431D3DF7767}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F272FDE-169A-4E17-9853-0431D3DF7767}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F272FDE-169A-4E17-9853-0431D3DF7767}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F272FDE-169A-4E17-9853-0431D3DF7767}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6DA2872-F225-4935-BB9D-F66923F3B726}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6DA2872-F225-4935-BB9D-F66923F3B726}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6DA2872-F225-4935-BB9D-F66923F3B726}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6DA2872-F225-4935-BB9D-F66923F3B726}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ECFF72FA-58FC-4CCE-89BC-3B632B67D601} = {240DBF35-177F-46BD-9F1B-606CA755DEC6}
+		{9F272FDE-169A-4E17-9853-0431D3DF7767} = {0AD111E1-1204-4D02-8599-2E18A2F79854}
+		{F6DA2872-F225-4935-BB9D-F66923F3B726} = {50134AAC-6AC5-42D0-A53A-D043C51CA430}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {220D7148-327E-4C9B-BFF6-21C2A4448080}
+	EndGlobalSection
+EndGlobal
